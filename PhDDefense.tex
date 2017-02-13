@@ -20,6 +20,7 @@
 \usepackage{comment}
 \usepackage{ulem}
 \usepackage{multirow}
+\usepackage{makecell}
 
 %\usepackage{colortbl}
 %\usepackage{pstricks}
@@ -62,11 +63,12 @@
     \tableofcontents
   \end{frame}
 
-%%%%%%%%%%%%%%%%%%
-%% INTRODUCTION %%
-%%%%%%%%%%%%%%%%%%
 
-  \section{Introduction}
+
+  %%%%%%%%%%%%%%%%%%
+  %% INTRODUCTION %%
+  %%%%%%%%%%%%%%%%%%
+  \section{Contexte théorique et expérimental}
 
   \begin{frame}
   \frametitle{\secname}
@@ -89,23 +91,25 @@
         \end{itemize}
         Théorie de jauge SU(3) $\bigotimes$ SU(2) $\bigotimes$ U(1)
       \end{block}
+      ~
     \end{minipage} \hfill
     \begin{minipage}{0.38\linewidth}
       \begin{tikzpicture}
         \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.9\linewidth]{figs/Particules_elementaires.png}};
         \draw<2>[red, thick, overlay] (3.03,2.1) rectangle (3.65,2.7);
-        % \draw<2>[red, thick, overlay, ->] (3.65,2.4) -- (4,2.4) -- (4,0.5);
       \end{tikzpicture}
-      % \includegraphics[width=0.9\linewidth]{figs/Particules_elementaires.png}
     \end{minipage}
-    \begin{minipage}{0.48\linewidth}
-      \begin{tikzpicture}
-        \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.9\linewidth]{figs/CMS_Higgs_plot.png}};
-        \draw<2>[red, thick, overlay] (2.3,2) circle (0.4);
-      \end{tikzpicture}
-      % \includegraphics[width=0.9\linewidth]{figs/CMS_Higgs_plot.png}
-    \end{minipage}
-    \begin{minipage}{0.48\linewidth}
+    \begin{minipage}{0.46\linewidth}
+      \begin{center}
+        \begin{tikzpicture}
+          \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.8\linewidth]{figs/CMS_Higgs_plot.pdf}};
+          \draw<2>[red, thick, overlay] (1.55,1) circle (0.4);
+        \end{tikzpicture}
+      \end{center}
+      \vspace{-0.5cm}
+      \crefarticle{CMS-HIG-13-001}{arXiv:1407.0558v2}
+    \end{minipage} \hfill
+    \begin{minipage}{0.52\linewidth}
       \begin{block}{Des familles et des générations !}
         \begin{itemize}
           \item 12 fermions
@@ -122,7 +126,7 @@
       \end{block}
     \end{minipage}
     \begin{tikzpicture}
-      \draw<2>[red, thick, overlay, ->] (-0.18,4.75) -- (0.3,4.75) -- (0.3,-2.2) -- (-8.25,-2.2) -- (-8.25,-0.6);
+      \draw<2>[red, thick, overlay, ->] (-0.45,4.9) -- (0.3,4.9) -- (0.3,-2.25) -- (-11,-2.25) -- (-11,-0.6) -- (-9.15,-0.6);
     \end{tikzpicture}
   \end{frame}
 
@@ -301,8 +305,8 @@
     \end{minipage} \hfill
     \begin{minipage}{0.48\linewidth}
       \begin{center}
-        \includegraphics[width=0.7\linewidth]{figs/eff_2012.pdf} \\
-        \includegraphics[width=0.7\linewidth]{figs/mul_2012.pdf}
+        \includegraphics[width=0.7\linewidth]{figs/effLayer.pdf} \\
+        \includegraphics[width=0.7\linewidth]{figs/mulLayer.pdf}
       \end{center}
     \end{minipage}
     \crefarticle{The Calice Collaboration}{arXiv:1604.04550}
@@ -314,7 +318,7 @@
   \small
   \begin{frame}
   \frametitle{\secname}
-  \framesubtitle{\subsecname}
+  \framesubtitle{\subsecname - reconstruction de l'énergie des hadrons}
 
     \begin{minipage}{0.65\linewidth}
 
@@ -361,20 +365,816 @@
 
       \pause
       \begin{tikzpicture}
-        \draw[red,  thick, overlay] (-7.8,-7.8) rectangle (-0.3,-4);
+        \draw[red,  thick, overlay] (-7.8,-7.8) rectangle (-0.3,-3.8);
         \draw[red,  thick, overlay] (-0.1,-7) rectangle (3.5,0);
       \end{tikzpicture}
       \begin{center}
         \includegraphics[width=\linewidth]{figs/Energy-Linearity.pdf} \\
         \includegraphics[width=\linewidth]{figs/Energy-Resolution.pdf}
-
-        % \begin{center} The Calice Collaboration\\ JINST \textbf{11} P04001 \end{center}
       \end{center}
+      \vspace{-0.4cm}
       \crefarticle{The Calice Collaboration}{JINST \textbf{11} P04001}
     \end{minipage}
 
   \end{frame}
 \endgroup
+
+  %% Quelques désaccords (1)
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - quelques désaccords ...}
+    \begin{center}
+      \includegraphics[width=0.49\linewidth]{figs/NHITPIONHP.pdf}
+      \includegraphics[width=0.49\linewidth]{figs/NHITPION_MODEL.pdf}
+    \end{center}
+    \crefarticle{Thèse A. Steen}{2015LYO10230}
+  \end{frame}
+
+
+  %% Quelques désaccords (2)
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - quelques désaccords ...}
+    \begin{center}
+      \includegraphics[width=0.49\linewidth]{figs/RADPIONHP.pdf}
+      \includegraphics[width=0.49\linewidth]{figs/RADPROF_PION_MODEL.pdf}
+    \end{center}
+    \crefarticle{Thèse A. Steen}{2015LYO10230}
+  \end{frame}
+
+
+
+
+  %%%%%%%%%
+  %% PFA %%
+  %%%%%%%%%
+  \section{Les algorithmes de suivi de particules}
+
+  \begin{frame}
+  \frametitle{\secname}
+    \tableofcontents[currentsection]
+  \end{frame}
+
+  \subsection{Introduction}
+
+  \begingroup
+  \small
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname}
+    \begin{block}{Définition}
+      \centering \textcolor{red}{Algorithme(s) de reconstruction} visant à reconstruire les particules \textcolor{blue}{individuellement} en \textcolor{red}{combinant les informations} les plus appropriées des \textcolor{blue}{différents sous-détecteurs}.
+    \end{block}
+    \pause
+    \begin{center} \textbf{\large PFA = \textcolor{red}{Logiciel} + \textcolor{blue}{Détecteur} !} \end{center}
+    \pause
+    \begin{minipage}{0.48\linewidth}
+      \begin{block}{Sous-détecteurs appropriés}
+        \begin{itemize}
+          \item $e^{\pm}$ : \textbf{Tracker}
+          \item $h^{\pm}$ : \textbf{Tracker}
+          \item $\mu^{\pm}$ : \textbf{Tracker} + chambres à muons
+          \item $\gamma$ ~~~: \textbf{ECal} + Tracker (track veto)
+          \item $h^{0}$ ~: \textbf{ECal + HCal}
+        \end{itemize}
+      \end{block}
+      \begin{block}{Composition moyenne d'un jet de 100 GeV}
+        \begin{itemize}
+          \item 65 \% particules chargées
+          \item 25 \% photons
+          \item 10 \% hadrons neutres
+        \end{itemize}
+        \crefarticle{}{NIM \textbf{A495} (2002), 107–120}
+      \end{block}
+    \end{minipage} \hfill
+    \begin{minipage}{0.5\linewidth}
+      \begin{center}
+        \includegraphics[width=0.95\linewidth]{pfa_event_display.png}
+      \end{center}
+    \end{minipage}
+  \end{frame}
+  \endgroup
+
+  \begingroup
+  \footnotesize
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - PandoraPFA}
+    \begin{minipage}{0.6\linewidth}
+    \begin{block}{PandoraPFA}
+      \begin{enumerate}
+        \item<2-> \textcolor{red}{\textit{Clustering} en cône récursifs}
+        \item<3-> \textcolor{MyGreen}{Associations topologiques}
+        \begin{itemize}
+          \item<3-> \textcolor{MyGreen}{\footnotesize Association trace $\leftrightarrow$ cluster}
+          \item<3-> \textcolor{MyGreen}{\footnotesize Association cluster $\leftrightarrow$ cluster}
+        \end{itemize}
+        \item<4->  \textbf{\textit{Re-clustering} statistique}
+        \begin{itemize}
+          \item<4-> \textbf{\footnotesize Compatibilité $E-p$}
+          \item<4-> \textbf{\footnotesize Clustering local}
+        \end{itemize}
+        \item<5-> \textcolor{blue}{Suppression des fragments}
+      \end{enumerate}
+    \end{block}
+    ~
+    \end{minipage} \hfill
+    \begin{minipage}{0.39\linewidth}
+      \begin{center}
+        \begin{tikzpicture}
+          \node<2->[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.9\linewidth]{figs/ConeAlgorithm.pdf}};
+          \draw<2->[red,  thick, overlay] (0,-0.1) rectangle (3.8,3.8);
+        \end{tikzpicture}
+      \end{center}
+    \end{minipage}
+    \begin{minipage}{0.6\linewidth}
+      \begin{center}
+        {\onslide<3-> \includegraphics[width=\linewidth]{PandoraAssociations.pdf}
+        \begin{tikzpicture}
+          \draw[MyGreen,  thick, overlay] (0.1,-0) rectangle (-6.55,1.65);
+        \end{tikzpicture}} \\
+        \vspace{0.1cm}
+        {\onslide<5-> \includegraphics[width=0.8\linewidth]{PandoraFragmentRemoval.pdf}
+        \begin{tikzpicture}
+          \draw[blue,  thick, overlay] (0.1,-0.1) rectangle (-5.3,2.15);
+        \end{tikzpicture}}
+      \end{center}
+    \end{minipage} ~ \hfill
+    \begin{minipage}{0.37\linewidth}
+      \begin{center}
+        {\onslide<4-> \includegraphics[width=\linewidth]{PandoraReclustering-ClusterSplitting.pdf} \\ ~ \\
+        \includegraphics[width=\linewidth]{PandoraReclustering-MergeSplit.pdf}
+        \begin{tikzpicture}
+          \draw[black,  thick, overlay] (0.1,-0.1) rectangle (-4.1,2.9);
+        \end{tikzpicture}}
+      \end{center}
+    \end{minipage}
+  \end{frame}
+  \endgroup
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - les performances de PandoraPFA}
+
+  \begin{minipage}{0.6\linewidth}
+
+    \begin{block}{Extraction des performances}
+      \begin{itemize}
+        \item Boson $Z^0$ virtuel $\rightarrow$ \textit{jj}
+        \item Énergies : 91, 200, 360 et 500 $GeV$
+      \end{itemize}
+    \end{block}
+
+    {\onslide<2->
+    \begin{block}{Les limites de PandoraPFA}
+      \begin{itemize}
+        \item Conçu pour un HCal analogique
+        \item Optimisé pour une taille de cellule 3x3$cm^2$
+        \item Calcul d'énergie linéaire dans les algorithmes
+      \end{itemize}
+    \end{block}
+
+    \begin{center}
+      \includegraphics[width=0.7\linewidth]{PandoraPFA_JER_ILD_v05_o2.pdf}
+    \end{center}
+    \crefarticle{Thèse A. Steen}{2015LYO10230}
+    }
+
+  \end{minipage} ~~ \hfill
+  \begin{minipage}{0.37\linewidth}
+
+    \begin{center}
+      {\onslide<1-> \includegraphics[width=\linewidth]{PandoraPFA_JER_ILD_v05_o1.png} \\
+      \includegraphics[width=\linewidth]{PandoraPFA_JER_ILD_v05_o1_Cheating.png}
+      \crefarticle{M. A. Thomson\\}{\textbf{NIM}, A611:25-40,2009}
+      }
+    \end{center}
+
+  \end{minipage}
+
+  \end{frame}
+
+  \subsection{Principe d'ArborPFA}
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname}
+  \begin{block}{Principe}
+    Algorithme de \textit{clustering} basé sur la \textbf{topologie en arbre} des gerbes hadroniques.
+  \end{block}
+  \pause
+  \begin{minipage}{0.325\linewidth}
+    \begin{center}
+      \includegraphics[width=\linewidth]{ProtonDecay.png} \\
+      Gerbe hadronique
+    \end{center}
+  \end{minipage} \hfill
+  \begin{minipage}{0.325\linewidth}
+    \begin{center}
+      \pause
+      \includegraphics[width=\linewidth]{ProtonDecayCaloNoConnector.pdf} \\
+      dans un calorimètre
+    \end{center}
+  \end{minipage}\hfill
+  \begin{minipage}{0.325\linewidth}
+    \begin{center}
+      \pause
+      \includegraphics[width=\linewidth]{ProtonDecayCalo.pdf} \\
+      avec ArborPFA
+    \end{center}
+  \end{minipage}
+  \pause
+  \begin{block}{Quelques définitions}
+    \begin{itemize}
+      \item \textbf{Vertex} : \textit{Point} (\textit{sommet}) dans l'espace relié par un ou plusieurs connecteurs (+ vertex racines et feuilles)
+      \item \textbf{Connecteur} : \textit{Lien} (\textit{arrête}) orienté liant deux vertex
+      \item \textbf{Arbre} : Ensemble de vertex reliés par des connecteurs (\textit{arbre enraciné}).
+      \begin{itemize}
+        \item il est connexe
+        \item possède un unique vertex sans prédecesseur,
+        \item tous les autres vertex possèdent un unique prédécesseur.
+      \end{itemize}
+    \end{itemize}
+  \end{block}
+  \end{frame}
+
+  %% La partie logicielle
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - La partie logicielle}
+    \begin{center}
+      \includegraphics[width=\linewidth]{ArborSoftwareView.pdf}
+    \end{center}
+  \end{frame}
+
+  \subsection{ArborPFA pour le SDHCAL}
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname}
+
+    \begin{itemize}
+      \item Test du principe de l'algorithme
+      \item Habitilité à reconstruire une particule isolée
+      \item Habitilité à séparer un hadron neutre d'un chargé
+    \end{itemize}
+
+    \begin{block}{Implémentation}
+      \begin{minipage}{0.6\linewidth}
+        \begin{itemize}
+          \item Création de vertex (1 algo)
+          \item Construction des arbres et clusters (6 algos)
+          \begin{itemize}
+            \item \textcolor<2->{blue}{Connexions des vertex (3 algos)}
+            \item \textcolor<2->{blue}{Nettoyage des connexions (3 algos)}
+          \end{itemize}
+          \item Association traces $\rightarrow$ clusters (1 algo)
+          \item Association clusters $\rightarrow$ clusters (3 algos)
+          \item Création de PFOs (1 algo)
+        \end{itemize}
+      \end{minipage}
+      \begin{minipage}{0.39\linewidth}
+        \begin{center}
+          {\onslide<2-> \includegraphics[width=\linewidth]{ConnectCleanIntro.pdf}}
+        \end{center}
+      \end{minipage}
+    \end{block}
+
+  \end{frame}
+
+
+  %% ArborPFA - ILD
+  \subsection{ArborPFA pour le détecteur ILD}
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname}
+  \end{frame}
+
+
+
+
+  %%%%%%%%%%%%%
+  %% DQM4HEP %%
+  %%%%%%%%%%%%%
+  \section{Logiciel de surveillance de données}
+
+  \begin{frame}
+  \frametitle{\secname}
+    \tableofcontents[currentsection]
+  \end{frame}
+
+  \subsection{Introduction}
+
+  %% Introduction
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname}
+  \small
+    \begin{block}{Les systèmes de DQM}
+      \begin{itemize}
+        \item Évalue la \textbf{qualité} des données :
+        \begin{itemize}
+          \item en ligne
+          \item hors ligne
+        \end{itemize}
+        \item \textbf{Alerte} l'utilisateur d'un \textbf{état anormal du système} de détection (fuite de gaz, cellule morte, ...)
+        \item Présents dans les expériences de physique de hautes énergies. Par exemple :
+        \begin{itemize}
+          \item CMS   - CMSSW DQM
+          \item ALICE - AMORE
+        \end{itemize}
+        \item Principe général : collecter $\rightarrow$ distribuer $\rightarrow$ analyser $\rightarrow$ visualiser
+      \end{itemize}
+    \end{block}
+    \pause
+    \begin{minipage}{0.47\linewidth}
+      \begin{block}{Fonctionnalités communes}
+        \begin{itemize}
+          \item Couplage au système d'acquisition
+          \item Analyse de données en ligne / hors ligne
+          \item Tests de la qualité des données
+          \item Interface de visualisation des données (histogrammes, scalaires, etc ...)
+          \item Environnements distribués \\(multi-processus + réseau)
+        \end{itemize}
+      \end{block}
+    \end{minipage} \hfill
+    \begin{minipage}{0.47\linewidth}
+      \pause
+      \begin{block}{Fonctionnalités différentes}
+        \begin{itemize}
+          \item \textbf{Contenu des données entrantes}
+          \item \textbf{Format des données entrantes}
+          \item Contenu des analyses
+          \item Couplage au système d'acquisition
+          \item Synthèse différente des données sur l'interface utilisateur
+        \end{itemize}
+      \end{block}
+    \end{minipage}
+    \pause
+    \begin{center} \textbf{Logiciel commun ???} \end{center}
+  \end{frame}
+
+
+  \subsection{Logiciel DQM4HEP}
+
+  %% DQM4HEP introduction
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname}
+    \begin{block}{Points clés}
+      \begin{itemize}
+        \item Nouveau logiciel : DQM4HEP (\textit{\textbf{D}ata \textbf{Q}uality \textbf{M}onitoring for \textbf{H}igh \textbf{E}nergy \textbf{P}hysics})
+        \item Regroupement des fonctionnalités communes des différents logiciels
+        \item \textbf{Abstraction des autres fonctionnalités}
+      \end{itemize}
+    \end{block}
+    \pause
+    \begin{block}{Les fonctionnalités}
+      \begin{itemize}
+        \item \textbf{Système de plug-in}
+        \item \textbf{Abstraction des événements (modèle/format)}
+        \item Station de gestion des runs
+        \item Environnement d'analyse de données dédié au DQM
+        \item Environnement distribué (serveur/client)
+        \begin{itemize}
+          \item Données brutes (DAQ)
+          \item Éléments de surveillance (histogrammes, graphes, ...)
+        \end{itemize}
+        \item Interface graphique de visualisation (opérateurs)
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  %% Architecture
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - architecture logicielle}
+    \begin{center}
+      \includegraphics[width=\linewidth]{GlobalArchitectureDiagram.pdf}
+    \end{center}
+    \pause
+    \begin{tikzpicture}
+      \draw[red,  thick, overlay] (2.15,2.1) rectangle (3.6,3);
+      \draw[red,  thick, overlay] (4.3,3.7) rectangle (5.75,4.55);
+      \draw[red,  thick, overlay] (9.05,0.75) rectangle (10.75,6.15);
+    \end{tikzpicture}
+  \end{frame}
+
+  %% Analysis module
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - analyse des données provenant des détecteurs}
+    \begin{minipage}{0.78\textwidth}
+      \begin{block}{Module d'analyse de données}
+        \begin{itemize}
+          \item Conçu pour l'analyse de données (raw data, tracking, PFA, etc ...)
+          \item Produit des élements de surveillance (histogrammes, graphes, ...)
+          \item Évalue la qualité des données (Q-tests)
+          \item Structuré en séquence de runs et de cycles
+        \end{itemize}
+      \end{block}
+      \begin{center}
+        \includegraphics[width=\linewidth]{AnalysisModuleApplicationDiagram.pdf}
+      \end{center}
+    \end{minipage} \hfill
+    \begin{minipage}{0.18\textwidth}
+      \begin{flushright}
+        \begin{tikzpicture}[scale=0.8]
+        \node[draw] (I) at (0,-1) {Init};
+        \node[draw] (SR) at (0,-2) {Start of run};
+        \node[draw] (SC) at (0,-3) {Start of cycle};
+        \node[draw] (PE) at (0,-4) {Process event};
+        \node[draw] (EC) at (0,-5) {End of cycle};
+        \node[draw] (ER) at (0,-6) {End of run};
+        \node[draw] (E) at (0,-7) {End};
+        \tikzset{fleche/.style={->,>=latex,thick}}
+        \draw[fleche] (0,0) node {$\bullet$} -- (I);
+        \draw[fleche] (I) -- (SR);
+        \draw[fleche] (SR) -- (SC);
+        \draw[fleche] (SC) -- (PE);
+        \draw[fleche] (PE) -- (EC);
+        \draw[fleche] (EC) -- (ER);
+        \draw[fleche] (ER) -- (E);
+        \draw[fleche] (E) -- (0,-8) node {$\bullet$};
+        \draw[fleche] (0,-4.5) -- (1.3,-4.5) -- (1.3,-3.5) -- (0,-3.5);
+        \draw[fleche] (0,-5.5) -- (1.4,-5.5) -- (1.4,-2.5) -- (0,-2.5);
+        \draw[fleche] (0,-6.5) -- (1.5,-6.5) -- (1.5,-1.5) -- (0,-1.5);
+        \end{tikzpicture}
+      \end{flushright}
+    \end{minipage}
+  \end{frame}
+
+  %% Slow control module
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - analyse des données environnementales}
+    \begin{minipage}{0.78\textwidth}
+      \begin{block}{Module environnemental}
+        \begin{itemize}
+          \item Traitement de données environnementales (T, P, HV, gaz, ...)
+          \item Pas de donnée transmise au module
+          \item Produit des éléments de surveillance (histogrammes, graphes, ...)
+          \item Évalue la qualité des données (Q-tests)
+        \end{itemize}
+      \end{block}
+      \begin{center}
+        \includegraphics[width=\linewidth]{StandaloneModuleApplicationDiagram.pdf}
+      \end{center}
+    \end{minipage} \hfill
+    \begin{minipage}{0.18\textwidth}
+      \begin{flushright}
+        \begin{tikzpicture}[scale=0.8]
+        \node[draw] (I) at (0,-1) {Init};
+        \node[draw] (SC) at (0,-2) {Start of cycle};
+        \node[draw] (PE) at (0,-3) {Process};
+        \node[draw] (EC) at (0,-4) {End of cycle};
+        \node[draw] (E) at (0,-5) {End};
+        \tikzset{fleche/.style={->,>=latex,thick}}
+        \draw[fleche] (0,0) node {$\bullet$} -- (I);
+        \draw[fleche] (I) -- (SC);
+        \draw[fleche] (SC) -- (PE);
+        \draw[fleche] (PE) -- (EC);
+        \draw[fleche] (EC) -- (E);
+        \draw[fleche] (E) -- (0,-6) node {$\bullet$};
+        \draw[fleche] (0,-3.5) -- (1.3,-3.5) -- (1.3,-2.5) -- (0,-2.5);
+        \draw[fleche] (0,-4.5) -- (1.4,-4.5) -- (1.4,-1.5) -- (0,-1.5);
+        \end{tikzpicture}
+      \end{flushright}
+    \end{minipage}
+  \end{frame}
+
+  %% Run control
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - gestion des run}
+    \begin{minipage}{0.33\linewidth}
+      \begin{block}{Gestionnaire graphique de run}
+        \begin{itemize}
+          \item Configuration du run
+          \begin{itemize}
+            \item numéro de run
+            \item nom du détecteur
+            \item paramètres
+            \item description
+          \end{itemize}
+          \item Envoie des signaux de :
+          \begin{itemize}
+            \item début de run
+            \item fin de run
+          \end{itemize}
+          \item Statut du run
+          \item Barre de notification
+        \end{itemize}
+      \end{block}
+    \end{minipage} ~\hfill
+    \begin{minipage}{0.6\linewidth}
+      \begin{center}
+        \includegraphics[width=\linewidth]{RunControlGUI.pdf}
+      \end{center}
+    \end{minipage}
+  \end{frame}
+
+  %% Job control
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - gestion des processus}
+    \begin{onlyenv}<1-2>
+      \begin{block}<1-2>{Remarques}
+        \begin{itemize}
+          \item nombre important de processus
+          \item processus dispatchés sur plusieurs hôtes
+          \begin{itemize}
+            \item séparation DAQ $\leftrightarrow$ DQM
+            \item amortissement de la charge CPU
+          \end{itemize}
+          \item gestion manuelle complexe
+        \end{itemize}
+      \end{block}
+      \begin{block}<2>{Solution}
+        \begin{itemize}
+          \item Implémentation d'un gestionnaire de processus à distance (\textit{dimjc})
+          \item Implémentation d'un gestionnaire graphique (QtGui)
+        \end{itemize}
+      \end{block}
+    \end{onlyenv}
+    \begin{onlyenv}<3>
+      \begin{center}
+        \includegraphics[width=\linewidth]{JobControlGui.pdf}
+      \end{center}
+      \begin{tikzpicture}
+        \draw[gray, overlay, rounded corners=1pt] (0,0.7) rectangle (10.8,7.06);
+      \end{tikzpicture}
+    \end{onlyenv}
+  \end{frame}
+
+  %% Monitoring GUI
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - surveillance par les opérateurs}
+    \begin{minipage}{0.5\linewidth}
+      \begin{block}{Interface pour les opérateurs}
+        \begin{itemize}
+          \item Client graphique multi-collecteurs (QtGui)
+          \item Navigateur vers les collecteurs
+          \begin{itemize}
+            \item Requête, filtrage, sélection d'élements
+          \end{itemize}
+          \item Rendu des élements de surveillance lors des mises à jour
+          \item Affichage multi-éléments
+          \item \textbf{Aperçu du statut des détecteurs}
+          \item Contenu graphique persistent (XML)
+        \end{itemize}
+      \end{block}
+    \end{minipage} ~\hfill
+    \begin{minipage}{0.47\linewidth}
+      \begin{center}
+        \includegraphics[width=\linewidth]{MonitoringMVCDiagram.pdf}
+      \end{center}
+    \end{minipage}
+  \end{frame}
+
+  %% Monitoring GUI (2)
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - surveillance par les opérateurs (GUI)}
+    {
+    \onslide<1->
+    \begin{center}
+      \includegraphics[width=\linewidth]{MonitoringMainWindowGui.pdf}
+    \end{center}
+    }
+    \begin{tikzpicture}
+      \node<3>[overlay, anchor=south west,inner sep=0] at (2, 1) {\includegraphics[width=0.6\linewidth]{MonitoringBrowserWindowGui.pdf}};
+      \draw<2-3>[black, thick, overlay, rounded corners=2pt] (0.7,0.6) rectangle (1.7,1.);
+      \draw[gray, overlay, rounded corners=1pt] (0,0.65) rectangle (10.8,6.6);
+      \draw<4>[black, thick, overlay, rounded corners=2pt] (0.1,4) rectangle (1.6,5.8);
+    \end{tikzpicture}
+  \end{frame}
+
+
+  %% DQMSDHCAL
+  \subsection{Surveillance de la prise de données du SDHCAL}
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname}
+    \begin{block}{Test sur faisceau combiné}
+      \begin{itemize}
+        \item Test sur faisceau combiné SiWEcal + SDHCAL
+        \begin{itemize}
+          \item DAQ et DQM combinés
+        \end{itemize}
+        \item Test du logiciel
+        \begin{itemize}
+          \item Prise en main par les opérateurs ?
+          \item Performances graphiques, réseau, mémoire ?
+          \item Détection de problème(s) ?
+        \end{itemize}
+      \end{itemize}
+    \end{block}
+    \begin{center}
+      \includegraphics[width=\linewidth]{CombinedCaloSetup.pdf}
+    \end{center}
+  \end{frame}
+
+  %% Data format / Analysis / Bilan
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname}
+    \begin{block}{Le format de données}
+      \begin{itemize}
+        \item Format LCIO
+        \item Sérialisation implémentée (\texttt{LCIOStreamer})
+      \end{itemize}
+    \end{block}
+    \pause
+    \begin{block}{Les analyses de données}
+      \begin{minipage}{0.49\linewidth}
+        \begin{itemize}
+          \item Module \texttt{RawDataAnalysis} \\
+          Cartes de comptage de hits et ASICs \\
+          Corrélation comptage DIFs vs ASICs
+          \item Module \texttt{EventDisplay} \\
+          Identification des particules \\
+          Profiles 2D et vues 3D des événements
+        \end{itemize}
+      \end{minipage} \hfill
+      \begin{minipage}{0.49\linewidth}
+        \begin{itemize}
+          \item Module \texttt{SlowControl} \\
+          T, P (global) et HV, LV, I (par chambre)
+          \item Module \texttt{EcalAnalysis} \\
+          Cartes de comptage de hits, adc par plan
+          \item Module \texttt{BeamAnalysis} \\
+          Temps d'acquisition, durée des spills
+        \end{itemize}
+      \end{minipage}
+    \end{block}
+    \pause
+    \begin{block}{Bilan du test sur faisceau}
+      \begin{minipage}{0.49\linewidth}
+        \begin{itemize}
+          \item Performances mémoires $\rightarrow$ perfectible
+          \item Performances réseau $\rightarrow$ OK
+          \item Prise en main du logiciel $\rightarrow$ OK
+          \begin{itemize}
+            \item Pas "lag" graphique
+          \end{itemize}
+        \end{itemize}
+      \end{minipage} \hfill
+      \begin{minipage}{0.49\linewidth}
+        \begin{itemize}
+          \item Déploiement du logiciel $\rightarrow$ perfectible
+          \item Éléments les plus visualisés :
+          \begin{itemize}
+            \item Cartes de comptage (Ecal et SDHCAL)
+            \item Courant I(t)
+            \item Temps d'acquisition
+          \end{itemize}
+        \end{itemize}
+      \end{minipage}
+    \end{block}
+  \end{frame}
+
+
+  %%%%%%%%%%%%%%%%
+  %% Conclusion %%
+  %%%%%%%%%%%%%%%%
+  \section{Conclusion et perspectives}
+
+  \begin{frame}
+  \frametitle{\secname}
+    \tableofcontents[currentsection]
+  \end{frame}
+
+  \subsection*{Conclusion}
+
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname}
+    \begin{block}{DQM4HEP}
+      \begin{itemize}
+        \item Les logiciels de DQM actuels sont de très bonne qualité mais restent très spécifiques à une expérience donnée
+        \item Un logiciel générique (DQM4HEP) à été développé. Il regroupe les fonctionnalités communes et abstrait les autres fonctionnalités (événements, IO, analyses)
+        \item L'architecture a été présentée. Un effort particulier a été mis sur la généricté du logiciel à l'aide d'un gestionnaire de plug-in
+        \item Une solution spécifique pour la combinaison des détecteurs SiWEcal et SDHCAL a été implémentée et déployée lors de plusieurs tests sur faisceaux
+        \item Les performances \textit{mémoires/réseaux/utilisateurs} ont montré un logiciel utilisable mais perfectible sur de nombreux points.
+        \item Résultats présentés à IEEE (poster) et publiés dans un \textit{conference record} (TODO : mettre la référence)
+        \item Le rapport du projet européen AIDA 2020 recommande l'utilisation de ce logiciel pour les tests sur faisceaux (TODO : à rephraser + compléter + ajouter référence)
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \subsection*{Perspectives}
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname}
+    \begin{block}{DQM4HEP}
+      \begin{itemize}
+        \item Remplacement de ROOT pour les histogrammes \\
+        $\rightarrow$ Amélioration des performances mémoires \\
+        $\rightarrow$ Interface graphique Qt pure, plus adaptée au contexte \\
+        $\rightarrow$ Implémentation d'une conversion DQM4HEP $\leftrightarrow$ ROOT
+        \item \textit{Refactoring} de la couche réseau \\
+        $\rightarrow$ Meilleure maintenance sur le long terme
+        \item Extension de la configuration du logiciel \\
+        $\rightarrow$ Solution plus centralisée (DB) et plus "\textit{user friendly}" (XML, json, yaml, ...)
+        \item Interface web de visualisation \\
+        $\rightarrow$ Pas d'installation du logiciel pour les opérateurs
+        \item Application de suivi de déploiement du logiciel \\
+        $\rightarrow$ Surveillance des performances de chacune des applications en direct
+        \item Implémentation d'un \textit{Online event display}
+        \item Rédaction d'une documentation développeur/utilisateur/opérateur
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \begin{center}
+      ~ \\
+      ~ \\
+      ~ \\
+      ~ \\
+      ~ \\
+      \Large Merci pour votre attention !
+    \end{center}
+  \end{frame}
+
+  \section*{Backup}
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{DQM4HEP}
+    \begin{block}{Les performances mémoires}
+      \begin{table}[!h]
+        \begin{center}
+        \setlength\tabcolsep{10pt}
+          \begin{tabular}{c|c|c|c|c}
+            Processus & \makecell{Mémoire \\ virtuelle \\ (KB)} & \makecell{Mémoire \\ résiduelle \\ (KB)} & \% Mémoire & \% CPU \\
+            \hline \hline
+            Slow control & 619600 & 256194 & 3.23 & 19.75 \\
+            \hline
+            Analyse ECal & \underline{410477} & \underline{89444} & \underline{1.13} & 7.35 \\
+            \hline
+            \makecell{Analyse \\ données brutes} & 580559 & 221993 & 2.8 & \textbf{32.4} \\
+            \hline
+            \textit{Event display} & 545670 & 237811 & 3 & 50.4 \\
+            \hline \hline
+            \makecell{Collecteur d'éléments \\ de surveillance} & 607924 & 305080 & 3.72 & \underline{5.05} \\
+            \hline
+            \makecell{Collecteur d'événements \\ physiques 1} & 558420 & 270784 & 3.3 & 13.57 \\
+            \hline
+            \makecell{Collecteur d'événements \\ physiques 2} & 518524 & 252332 & 3.08 & 7.57 \\
+            \hline
+            \makecell{Gestionnaire \\ de \textit{run}} & - & - & - & (0.03) \\
+            \hline \hline
+            Convertisseurs SHM & \textbf{1061870} & \textbf{638328} & \textbf{7.79} & 7.76
+          \end{tabular}
+        \end{center}
+      \end{table}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{DQM4HEP}
+    \begin{block}{Les performances réseau}
+      \begin{table}[!h]
+        \begin{center}
+        \setlength\tabcolsep{10pt}
+          \begin{tabular}{c c c|c}
+             \makecell{Serveur/processus \\ sortant} & ~ & \makecell{Serveur/processus \\ entrant} & \makecell{Bande \\ passante \\ (MB/s)} \\
+            \hline \hline
+            lyosdhcal9/Convertisseurs & $\longrightarrow$ & \makecell{lyosdhcal10/Collecteurs \\ d'événements physique} & 12 \\
+            \hline
+            \makecell{lyosdhcal10/Collecteurs \\ d'événements physique} & $\longrightarrow$ & \makecell{lyosdhcal7/Modules \\ d'analyse de données} & 41 \\
+            \hline
+            \makecell{lyosdhcal7/Modules \\ d'analyse de données} & $\longrightarrow$ & \makecell{lyosdhcal10/Collecteur \\ d'éléments de surveillance} & 12
+          \end{tabular}
+        \end{center}
+      \end{table}
+    \end{block}
+  \end{frame}
+
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{DQM4HEP - Déploiement SiWEcal/SDHCAL}
+  \begin{center}
+    \includegraphics[width=\linewidth]{DQMSDHCALDeployement.pdf}
+  \end{center}
+  \end{frame}
+
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{DQM4HEP - les paquets}
+    \begin{center}
+      \includegraphics[width=\linewidth]{PackagesDiagram.pdf}
+    \end{center}
+  \end{frame}
 
 
 \end{document}
