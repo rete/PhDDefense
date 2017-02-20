@@ -487,7 +487,9 @@
         \end{tikzpicture}
       \end{center}
     \end{minipage}
+
     \begin{minipage}{0.6\linewidth}
+      \vspace{-7pt}
       \begin{center}
         {\onslide<3-> \includegraphics[width=\linewidth]{PandoraAssociations.pdf}
         \begin{tikzpicture}
@@ -544,7 +546,7 @@
   \begin{minipage}{0.37\linewidth}
 
     \begin{center}
-      {\onslide<1-> \includegraphics[width=\linewidth]{PandoraPFA_JER_ILD_v05_o1.png} \\
+      {\onslide<1-> \includegraphics[width=1.07\linewidth]{PandoraPFA_JER_ILD_v05_o1.png} \\
       \includegraphics[width=\linewidth]{PandoraPFA_JER_ILD_v05_o1_Cheating.png}
       \crefarticle{M. A. Thomson\\}{\textbf{NIM}, A611:25-40,2009}
       }
@@ -559,7 +561,7 @@
   \frametitle{\secname}
   \framesubtitle{\subsecname}
   \begin{block}{Principe}
-    Algorithme de \textit{clustering} basé sur la \textbf{topologie en arbre} des gerbes hadroniques.
+    \begin{center}Algorithme de \textit{clustering} basé sur la \textbf{topologie en arbre} des gerbes hadroniques.\end{center}
   \end{block}
   \pause
   \begin{minipage}{0.325\linewidth}
@@ -597,49 +599,189 @@
   \end{block}
   \end{frame}
 
-  %% La partie logicielle
-  \begin{frame}
-  \frametitle{\secname}
-  \framesubtitle{\subsecname - La partie logicielle}
-    \begin{center}
-      \includegraphics[width=\linewidth]{ArborSoftwareView.pdf}
-    \end{center}
-  \end{frame}
 
   \subsection{ArborPFA pour le SDHCAL}
 
+  %% SDHCAL ArborPFA (1)
   \begin{frame}
   \frametitle{\secname}
   \framesubtitle{\subsecname}
 
-    \begin{itemize}
-      \item Test du principe de l'algorithme
-      \item Habitilité à reconstruire une particule isolée
-      \item Habitilité à séparer un hadron neutre d'un chargé
-    \end{itemize}
-
-    \begin{block}{Implémentation}
-      \begin{minipage}{0.6\linewidth}
-        \begin{itemize}
-          \item Création de vertex (1 algo)
-          \item Construction des arbres et clusters (6 algos)
-          \begin{itemize}
-            \item \textcolor<2->{blue}{Connexions des vertex (3 algos)}
-            \item \textcolor<2->{blue}{Nettoyage des connexions (3 algos)}
-          \end{itemize}
-          \item Association traces $\rightarrow$ clusters (1 algo)
-          \item Association clusters $\rightarrow$ clusters (3 algos)
-          \item Création de PFOs (1 algo)
-        \end{itemize}
-      \end{minipage}
-      \begin{minipage}{0.39\linewidth}
-        \begin{center}
-          {\onslide<2-> \includegraphics[width=\linewidth]{ConnectCleanIntro.pdf}}
-        \end{center}
-      \end{minipage}
+    \begin{block}{ArborPFA pour le SDHCAL}
+      \begin{itemize}
+        \item Test du principe de l'algorithme
+        \item Habilité à reconstruire une particule isolée
+        \item Habilité à séparer un hadron neutre d'un chargé
+      \end{itemize}
     \end{block}
 
+    \pause
+    \begin{minipage}{0.6\linewidth}
+      \begin{block}{Implémentation}
+        \begin{itemize}
+          \item \textcolor<2>{red}{Création de vertex (1 algo)}
+          \item \textcolor<3,7>{red}{Construction des arbres et clusters (6 algos)}
+          \begin{itemize}
+            \item \textcolor<3,7>{red}{Connexions des vertex (3 algos)}
+            \item \textcolor<3,7>{red}{Nettoyage des connexions (3 algos)}
+          \end{itemize}
+          %\item \textcolor<2->{blue}{Association traces $\rightarrow$ clusters (1 algo)}
+          \item \textcolor<4>{red}{Association traces $\rightarrow$ clusters (1 algo)}
+          % \item \textcolor<2->{blue}{Association clusters $\rightarrow$ clusters (3 algos)}
+          \item \textcolor<5>{red}{Association clusters $\rightarrow$ clusters (3 algos)}
+          \item \textcolor<6>{red}{Création de PFOs (1 algo)}
+        \end{itemize}
+      \end{block}
+    \end{minipage}
+    \begin{minipage}{0.39\linewidth}
+      \begin{overprint}
+        \onslide<2> \centering \includegraphics[width=0.8\linewidth]{VertexCreationIntro.pdf}
+        \onslide<3,7> \centering \includegraphics[width=0.8\linewidth]{ConnectCleanIntro.pdf}
+        \onslide<4> \centering \includegraphics[width=0.8\linewidth]{TrackClusterAssociationIntro.pdf}
+        \onslide<5> \centering \includegraphics[width=0.8\linewidth]{TopologicalAssociationsIntro.pdf}
+        \onslide<6> \centering \includegraphics[width=0.8\linewidth]{PfoCreationIntro.pdf}
+      \end{overprint}
+    \end{minipage}
   \end{frame}
+
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - Connexions des vertex}
+    \begin{overlayarea}{\textwidth}{0.6\textheight}
+      \begin{center}
+        \includegraphics[width=0.7\linewidth]<1>{ConnectorSeeding_1.pdf}
+        \includegraphics[width=0.7\linewidth]<2>{ConnectorSeeding_2.pdf}
+        \includegraphics[width=0.7\linewidth]<3>{ConnectorSeeding_3.pdf}
+        \includegraphics[width=0.7\linewidth]<4>{ConnectorSeeding_4.pdf}
+        \includegraphics[width=0.7\linewidth]<5>{ConnectorSeeding_5.pdf}
+        \includegraphics[width=0.7\linewidth]<6>{ConnectorSeeding_6.pdf}
+        \includegraphics[width=0.7\linewidth]<7>{ConnectorSeeding_7.pdf}
+        \includegraphics[width=0.7\linewidth]<8>{ConnectorSeedingFinal.pdf}
+      \end{center}
+    \end{overlayarea}
+  \end{frame}
+
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - Nettoyage des connexions}
+    \begin{overlayarea}{\textwidth}{0.6\textheight}
+      \begin{center}
+        \includegraphics[width=0.7\linewidth]<1>{ConnectorCleaning_1.pdf}
+      \end{center}
+    \end{overlayarea}
+  \end{frame}
+
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - Nettoyage des connexions}
+    \begin{minipage}{0.3\linewidth}
+      \onslide<1-5>{
+        Vecteur de référence :
+        \begin{align*}
+          \vec{C}_{ref} = - w_{bck} . \sum_\sigma \sum_b \vec{c}_{b,\sigma} \\- w_{fwd} . \sum_\delta \sum_f \vec{c}_{f,\delta}
+        \end{align*}
+      }
+      ~ \\
+      \onslide<3-5>{
+        Paramètre d'ordre :
+        \begin{align*}
+          \kappa = \Big(\frac{\theta}{\pi}\Big)^{p_\theta} . \Big( \frac{\Delta}{\Delta_{max}}\Big)^{p_\Delta}
+        \end{align*}
+      }
+    \end{minipage}
+    \begin{minipage}{0.68\linewidth}
+      \begin{overlayarea}{\textwidth}{0.8\textheight}
+        \begin{center}
+          \vspace{10pt}
+          \includegraphics[width=0.9\linewidth]<1>{ConnectorCleaning_2.pdf}
+          \includegraphics[width=0.9\linewidth]<2>{ConnectorCleaning_3.pdf}
+          \includegraphics[width=0.9\linewidth]<3>{ConnectorCleaning_3.pdf}
+          \includegraphics[width=0.9\linewidth]<4>{ConnectorCleaning_4.pdf}
+          \includegraphics[width=0.9\linewidth]<5>{ConnectorCleaning_5.pdf}
+        \end{center}
+      \end{overlayarea}
+    \end{minipage}
+  \end{frame}
+
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - Nettoyage des connexions}
+    \begin{overlayarea}{\textwidth}{0.6\textheight}
+      \begin{center}
+        \includegraphics[width=0.7\linewidth]<1>{ConnectorCleaningFinal.pdf}
+      \end{center}
+    \end{overlayarea}
+  \end{frame}
+
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - Hadrons isolés}
+    \begin{center}
+      \includegraphics[width=0.49\linewidth]{Single_MC_DATA_COMP_Efficiency.pdf}
+      \includegraphics[width=0.49\linewidth]{Single_MC_DATA_COMP_NPfos.pdf}
+    \end{center}
+  \end{frame}
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - Hadrons isolés}
+    \begin{center}
+      \includegraphics[width=0.49\linewidth]{Single_MC_DATA_COMP_ERec.pdf}
+      \includegraphics[width=0.49\linewidth]{Single_MC_DATA_COMP_EResol.pdf}
+    \end{center}
+  \end{frame}
+
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - Séparation de deux hadrons}
+    \begin{block}{Superposition de deux événements hadronique}
+      \begin{itemize}
+        \item Détermination des points d'entrées et barycentres.
+        \item Suppression des hits du segment de trace primaire du hadron de 10 GeV
+        \item Centrage au centre du calorimètre (x et y) puis décalage de $\pm$ d/2 dans la direction x
+        \item Hit superposé : le seuil le plus haut est assigné à ce hit
+        \item Les hits sont étiqueté 1, 2 ou 3 (superposé).
+      \end{itemize}
+    \end{block}
+    \begin{center}
+      \includegraphics[width=0.65\linewidth]{OverlayEvent.pdf}
+    \end{center}
+  \end{frame}
+
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - Séparation de deux hadrons}
+    \begin{center}
+      \includegraphics[width=0.49\linewidth]{OverlayEvent_Efficiency.pdf}
+      \includegraphics[width=0.49\linewidth]{OverlayEvent_Purity.pdf}
+    \end{center}
+  \end{frame}
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - Séparation de deux hadrons}
+    \begin{center}
+      \includegraphics[width=0.49\linewidth]{OverlayEvent_NPfos.pdf}
+      \includegraphics[width=0.49\linewidth]{OverlayEvent_EnergyDifference.pdf}
+    \end{center}
+  \end{frame}
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - Séparation de deux hadrons}
+    \begin{center}
+      \includegraphics[width=0.49\linewidth]{OverlayEvent_ProbaNeutral.pdf}
+      \includegraphics[width=0.49\linewidth]{OverlayEvent_EnergyDifferenceEfficient.pdf}
+    \end{center}
+  \end{frame}
+
 
 
   %% ArborPFA - ILD
@@ -648,9 +790,38 @@
   \begin{frame}
   \frametitle{\secname}
   \framesubtitle{\subsecname}
+    \begin{block}{ArborPFA pour le détecteur ILD}
+      \begin{itemize}
+        \item Prise en compte des autres sous détecteurs
+        \begin{itemize}
+          \item Connexion/nettoyage dans le ECAL
+          \item Connexion ECAL-HCAL
+          \item Traces courbées dans la TPC
+        \end{itemize}
+        \item Étude de linéarité et résolution énergie pour les hadrons isolés
+        \begin{itemize}
+          \item Calibration initiale de référence à $\phi=0$ et $\theta=3.14$ $rad$
+          \item Correction en énergie près des interstices dans le tonneau (5 modules)
+          \item Correction en énergie en fonction de l'angle $\theta$
+        \end{itemize}
+        \item Performances physiques sur un système di-jets ($Z^0~\rightarrow q\bar{q}$)
+        \begin{itemize}
+          \item Linéarité, résolution en énergie
+          \item Contribution de différents termes de confusions
+        \end{itemize}
+      \end{itemize}
+    \end{block}
   \end{frame}
 
-
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname}
+    \begin{block}{Calibration initiale}
+      \begin{itemize}
+        \item Hadrons neutres $E$ $=$ $[10, 80]~GeV$
+      \end{itemize}
+    \end{block}
+  \end{frame}
 
 
   %%%%%%%%%%%%%
@@ -1085,7 +1256,7 @@
         $\rightarrow$ Pas d'installation du logiciel pour les opérateurs
         \item Application de suivi de déploiement du logiciel \\
         $\rightarrow$ Surveillance des performances de chacune des applications en direct
-        \item Implémentation d'un \textit{Online event display}
+        \item Implémentation d'un \textit{event display} en ligne
         \item Rédaction d'une documentation développeur/utilisateur/opérateur
       \end{itemize}
     \end{block}
@@ -1102,7 +1273,36 @@
     \end{center}
   \end{frame}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  %%%%%%%%%%%%
+  %% BACKUP %%
+  %%%%%%%%%%%%
+
   \section*{Backup}
+
+  %% La partie logicielle
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - La partie logicielle}
+    \begin{center}
+      \includegraphics[width=\linewidth]{ArborSoftwareView.pdf}
+    \end{center}
+  \end{frame}
 
   \begin{frame}
   \frametitle{\secname}
