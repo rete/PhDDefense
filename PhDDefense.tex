@@ -790,38 +790,215 @@
   \begin{frame}
   \frametitle{\secname}
   \framesubtitle{\subsecname}
-    \begin{block}{ArborPFA pour le détecteur ILD}
+    \begin{minipage}{0.53\linewidth}
+      \begin{block}{ArborPFA pour le détecteur ILD}
+        \begin{itemize}
+          \item Prise en compte des autres sous détecteurs
+          \begin{itemize}
+            \item Connexion/nettoyage dans le ECAL
+            \item Connexion ECAL-HCAL
+            \item Traces courbées dans la TPC
+          \end{itemize}
+          \item Étude de linéarité et de résolution en énergie pour les hadrons neutres $K_{0}^{L}$
+          \begin{itemize}
+            \item Calibration initiale de référence \\
+            $\rightarrow$ $\phi=0$ et $\theta=1.5$ $rad$
+            \item Correction en énergie près des interstices dans le tonneau central (5 modules)
+            \item Correction en énergie en fonction de l'angle $\theta$
+          \end{itemize}
+          \item Performances physiques sur un système di-jets ($Z^0~\rightarrow q\bar{q}$)
+          \begin{itemize}
+            \item Linéarité, résolution en énergie
+            \item Contribution de différents termes de confusions
+          \end{itemize}
+        \end{itemize}
+      \end{block}
+    \end{minipage} ~~~~\hfill
+    \begin{minipage}{0.43\linewidth}
+      \begin{center}
+        \includegraphics[width=\linewidth]{BarrelEndcapRegions.pdf}
+      \end{center}
+    \end{minipage}
+  \end{frame}
+
+
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - Calibration et corrections en énergie}
+    \begin{minipage}{0.6\linewidth}
+      \begin{block}{Calibration initiale ($\phi=0$, $\theta=1.5$ $rad$)}
+        \begin{itemize}
+          \item Kaons neutres $K_{0}^{L}$, $E$ $=$ $[10, 80]~GeV$
+          \item Estimateur d'énergie :
+          \begin{align*}
+            E_{rec} = \sum_{i} \big(c_{h}^{e}.e_i\big) + \big(\alpha.N_1 + \beta.N_2 + \gamma.N_3\big)
+          \end{align*}
+          avec :
+          \begin{itemize}
+            \item $c_{h}^{e}$ = 1.075 $GeV$
+            \item $\alpha$ = 0.0433(771) $\pm 10^{-4}$ $GeV$
+            \item $\beta$  = 0.0884(24)  $\pm 10^{-4}$ $GeV$
+            \item $\gamma$ = 0.4573(53)  $\pm 10^{-4}$ $GeV$
+          \end{itemize}
+        \end{itemize}
+      \end{block}
+      \begin{center}
+        \includegraphics[width=0.6\linewidth]{ERecLin.pdf}
+      \end{center}
+    \end{minipage} \hfill
+    \begin{minipage}{0.39\linewidth}
+      \begin{center}
+        \includegraphics[width=0.8\linewidth]{kaon0L_primary_calibration_erec_2.pdf} \\
+        \includegraphics[width=0.8\linewidth]{kaon0L_primary_calibration_eresol_2.pdf}
+      \end{center}
+    \end{minipage}
+  \end{frame}
+
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - Calibration et corrections en énergie}
+    \begin{minipage}{0.49\linewidth}
+      \begin{block}{Correction près des interstices}
+        \begin{itemize}
+          \item Tonneau central séparé en 5 modules
+          \item Budget matière plus important près des interstices \\
+          $\rightarrow$ Énergie manquante !
+          \item Correction en énergie :\\
+          Comptage de l'énergie déposé près des interstices $E_{gap}$
+          \begin{align*}
+            E_{rec,gap} = E_{rec} + \alpha_{gap}.E_{gap}
+          \end{align*}
+          avec $\alpha_{gap}$ = 1.5254
+        \end{itemize}
+      \end{block}
+      \begin{center}
+        \includegraphics[width=\linewidth]{ModuleGap.pdf}
+      \end{center}
+    \end{minipage} \hfill
+    \begin{minipage}{0.5\linewidth}
+      \begin{center}
+        \begin{overprint}
+          \onslide<1> \centering \includegraphics[width=0.8\linewidth]{ERecLin.pdf} \\ \includegraphics[width=0.8\linewidth]{ERes_thesis.pdf}
+          \onslide<2> \centering \includegraphics[width=0.8\linewidth]{ERecLinGap_nofit_thesis.pdf} \\ \includegraphics[width=0.8\linewidth]{EResLinGap_thesis.pdf}
+        \end{overprint}
+      \end{center}
+    \end{minipage}
+  \end{frame}
+
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - Calibration et corrections en énergie}
+    \begin{minipage}{0.49\linewidth}
+      \begin{block}{Correction en fonction de $cos\theta$}
+        \begin{itemize}
+          \item<1-> Chute linéaire de l'énergie dans le tonneau et les bouchons
+          \item<2-> Énergies : ajustement linéaire  dans les régions 1 et 3
+          \item<3-> Paramètres : ajustement d'un polynôme d'ordre 1 ou 2
+          \item<4-> Région intermédiaire 2 : correction en fonction des fractions tonneau/bouchon
+          % \item<>
+        \end{itemize}
+      \end{block}
+      \begin{center}
+        \begin{overprint}
+          \onslide<2> \centering \includegraphics[width=0.8\linewidth]{ThetaCalibFit_nofit_thesis.pdf}
+          \onslide<3> \centering \includegraphics[width=0.8\linewidth]{ThetaCalibFit_pol2_thesis.pdf}
+          \onslide<4-> \centering \includegraphics[width=0.8\linewidth]{EndcapFraction_thesis.pdf}
+        \end{overprint}
+      \end{center}
+    \end{minipage} \hfill
+    \begin{minipage}{0.5\linewidth}
+      \begin{center}
+        \begin{overprint}
+          \onslide<1> \centering \includegraphics[width=0.8\linewidth]{ERecLinGap_nofit_thesis.pdf} \\ \includegraphics[width=0.8\linewidth]{EResLinGap_thesis.pdf}
+          \onslide<2-4> \centering \includegraphics[width=0.8\linewidth]{ERecLinGap_fits_thesis.pdf} \\ \includegraphics[width=0.8\linewidth]{EResLinGap_thesis.pdf}
+          \onslide<5-> \centering \includegraphics[width=0.8\linewidth]{ERecCorrThetaGapO2_thesis.pdf} \\ \includegraphics[width=0.8\linewidth]{EResCorrThetaGapO2_thesis.pdf}
+        \end{overprint}
+      \end{center}
+    \end{minipage}
+  \end{frame}
+
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - Les algorithmes de reconstruction}
+    \begin{block}{Implémentation pour le détecteur ILD}
       \begin{itemize}
-        \item Prise en compte des autres sous détecteurs
+        \item<1-> Préparation de l'évenement (2 algos)
+        \item<2-> Reconstruction des photons (8 algos)
+        \item<3-> Clustering principal (11 algos)
         \begin{itemize}
-          \item Connexion/nettoyage dans le ECAL
-          \item Connexion ECAL-HCAL
-          \item Traces courbées dans la TPC
+          \item<4-> Connexion des vertex et nettoyage des connexions (3 algos)
+          \item<5-> Associations topologiques (1+7 algos)
         \end{itemize}
-        \item Étude de linéarité et résolution énergie pour les hadrons isolés
+        \item<6-> Reclustering (41 algos)
         \begin{itemize}
-          \item Calibration initiale de référence à $\phi=0$ et $\theta=3.14$ $rad$
-          \item Correction en énergie près des interstices dans le tonneau (5 modules)
-          \item Correction en énergie en fonction de l'angle $\theta$
+          \item<6-> Reclustering en cas d'excès en énergie (12 clust + 7 top + 1 trk-cl)
+          \item<6-> Reclustering en cas d'énergie manquante (12 clust + 7 top + 1 trk-cl)
+          \item<6-> Reclustering en cas d'associations trace-cluster multiples (1 algo)
         \end{itemize}
-        \item Performances physiques sur un système di-jets ($Z^0~\rightarrow q\bar{q}$)
-        \begin{itemize}
-          \item Linéarité, résolution en énergie
-          \item Contribution de différents termes de confusions
-        \end{itemize}
+        \item<7-> Création et identification des particules reconstruites (6 algos)
       \end{itemize}
     \end{block}
+    ~ \\
+    \begin{overprint}
+      \onslide<2-3> \centering \includegraphics[width=0.8\linewidth]{NearbyTrackPhotonRemovalILD.pdf}
+      \onslide<4> \centering \includegraphics[width=0.8\linewidth]{TrackDrivenSeeding.pdf}
+      \onslide<5> \centering \includegraphics[width=0.8\linewidth]{ILDTopologicalAssociations.pdf}
+      \onslide<6-> \centering \includegraphics[width=0.8\linewidth]{ReclusteringAlgorithmsILD.pdf}
+    \end{overprint}
+  \end{frame}
+
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname - Les performances physiques}
+    \begin{minipage}{0.49\linewidth}
+      \begin{center}
+        \includegraphics[width=\linewidth]{ILDArborPFA_ErecConfusions_NoNeutralHadron.pdf}
+      \end{center}
+    \end{minipage}
+    \begin{minipage}{0.49\linewidth}
+      \begin{center}
+        \includegraphics[width=\linewidth]{ILDArborPFA_EResol_NoNeutralHadron.pdf}
+      \end{center}
+    \end{minipage}
   \end{frame}
 
   \begin{frame}
   \frametitle{\secname}
-  \framesubtitle{\subsecname}
-    \begin{block}{Calibration initiale}
-      \begin{itemize}
-        \item Hadrons neutres $E$ $=$ $[10, 80]~GeV$
-      \end{itemize}
-    \end{block}
+  \framesubtitle{\subsecname - Les performances physiques}
+    \begin{minipage}{0.49\linewidth}
+      \begin{center}
+        \includegraphics[width=\linewidth]{ILDArborPFA_Resolution_NoNeutralHadron.pdf}
+      \end{center}
+    \end{minipage}
+    \begin{minipage}{0.49\linewidth}
+      \begin{center}
+        \includegraphics[width=\linewidth]{ILDArborPFA_PerfectResolution_NoNeutralHadron.pdf}
+      \end{center}
+    \end{minipage}
   \end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   %%%%%%%%%%%%%
@@ -1208,6 +1385,18 @@
   \end{frame}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
   %%%%%%%%%%%%%%%%
   %% Conclusion %%
   %%%%%%%%%%%%%%%%
@@ -1220,19 +1409,95 @@
 
   \subsection*{Conclusion}
 
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname}
+    \begin{block}{Contexte théorique et expérimental}
+      \begin{itemize}
+        \pause
+        \item L'ILC est un des projets qui permettra de mesurer \textbf{précisement} les propriétés du boson de Higgs et de \textbf{contraindre le modèle standard}.
+        \pause
+        \item La programme physique requiert le développement de \textbf{détecteurs à grande granularité} pour permettre l'application des \textbf{algorithmes de suivi de particules}
+        \pause
+        \item L'algorithme de suivi de particules \textbf{PandoraPFA} est l'algorithme le plus abouti à ce jour mais \textbf{ne considère pas encore toutes les technologies} comme celle du SDHCAL.
+      \end{itemize}
+    \end{block}
+    \pause
+    \begin{block}{ArborPFA pour le SDHCAL}
+      \begin{itemize}
+        \pause
+        \item Un logiciel de reconstruction par \textbf{méthode de suivi de particules} a été développé pour le SDHCAL
+        \pause
+        \item Une \textbf{première implémentation} visant à tester le principe sous-jacent d'ArborPFA dans le \textbf{prototype du SDHCAL} a été développée :
+        \begin{itemize}
+          \item Hadrons seuls $\rightarrow$ bonnes performances ($\epsilon_s > 96\%$ et $\Delta_E/E < 10\%$)
+          \item Deux hadrons proches $\rightarrow$ bonnes performances jusqu'à 10cm. \\
+          Au deçà (5cm) : $p_n$=0.7 $\Rightarrow$ $\Delta_E/E$ < $5\%$
+        \end{itemize}
+        \pause
+        \item Résultats publiés dans une note d'analyse CALICE (CAN-054)
+        \pause
+        \item Publication dans JINST (\textit{Journal of Instrumentation}) en cours de rédaction
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname}
+    \begin{block}{ArborPFA pour le détecteur ILD}
+      \begin{itemize}
+        \pause
+        \item Une \textbf{seconde version} a été implémenté pour le \textbf{détecteur ILD}
+        \pause
+        \item Des \textbf{corrections en énergie} au niveau de hadrons isolés ont été développées :
+        \begin{itemize}
+          \item Correction près des \textbf{interstices inter-modules}
+          \item Correction en \textbf{fonction de $cos\theta$}
+          \item Corrections pas suffisante (linéarité)
+        \end{itemize}
+        \pause
+        \item De nouveaux algorithmes ont été développés
+        \begin{itemize}
+          \item Détecteurs additionnels : ECAL, TPC ($\vec{B} \neq \vec{0}$)
+          \item Algorithme de reconstruction de photon
+          \item Associations topologiques supplémentaires
+          \item Algorithmes de \textit{re-clustering}
+        \end{itemize}
+        \pause
+        \item Les performances physiques on été évaluées :
+        \begin{itemize}
+          \item Linéarité correcte
+          \item JER $\simeq$ $5-7\%$
+        \end{itemize}
+        \pause
+        \item La version de l'implémentation actuelle ne respecte pas les performances requises de l'ILC (JER $\sim$ $3-4\%$)
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
 
   \begin{frame}
   \frametitle{\secname}
   \framesubtitle{\subsecname}
     \begin{block}{DQM4HEP}
       \begin{itemize}
-        \item Les logiciels de DQM actuels sont de très bonne qualité mais restent très spécifiques à une expérience donnée
+        \pause
+        \item Les logiciels de \textit{DQM} permettent d'effectuer un \textbf{suivi de la qualité des données} lors des différentes prises de données
+        \pause
+        \item Les logiciels actuels sont de très bonne qualité mais \textbf{restent très spécifiques} à une expérience donnée
+        \pause
         \item Un logiciel générique (DQM4HEP) à été développé. Il regroupe les fonctionnalités communes et abstrait les autres fonctionnalités (événements, IO, analyses)
-        \item L'architecture a été présentée. Un effort particulier a été mis sur la généricté du logiciel à l'aide d'un gestionnaire de plug-in
-        \item Une solution spécifique pour la combinaison des détecteurs SiWEcal et SDHCAL a été implémentée et déployée lors de plusieurs tests sur faisceaux
-        \item Les performances \textit{mémoires/réseaux/utilisateurs} ont montré un logiciel utilisable mais perfectible sur de nombreux points.
+        \begin{itemize}
+          \item L'architecture a été présentée. Un effort particulier a été mis sur la \textbf{généricté du logiciel}
+          \item Une solution dédiée à la combinaison des détecteurs SiWEcal et SDHCAL a été implémentée et déployée lors de plusieurs tests sur faisceaux
+          \item Les performances \textit{mémoires/réseaux/utilisateurs} ont montré un logiciel utilisable mais perfectible sur certains points
+        \end{itemize}
+        \pause
         \item Résultats présentés à IEEE (poster) et publiés dans un \textit{conference record} (TODO : mettre la référence)
-        \item Le rapport du projet européen AIDA 2020 recommande l'utilisation de ce logiciel pour les tests sur faisceaux (TODO : à rephraser + compléter + ajouter référence)
+        \pause
+        \item Intégration au projet européen AIDA 2020 : WP5, Task 5.4 "\textit{Development of data quality and slow control monitoring}" \crefarticle{AIDA-2020-NOTE-2017-001}{cds.cern.ch/record/2241973}
       \end{itemize}
     \end{block}
   \end{frame}
@@ -1242,21 +1507,56 @@
   \begin{frame}
   \frametitle{\secname}
   \framesubtitle{\subsecname}
+    \begin{block}{ArborPFA pour l'ILD}
+      \begin{itemize}
+        \pause
+        \item Révision du \textit{clustering} principal \\
+        $\rightarrow$ Façon plus optimale de connecter les vertex ?
+        \pause
+        \item Ajout d'associations topologiques supplémentaires \\
+        $\rightarrow$ Support de la rétro-diffusion, etc ...
+        \pause
+        \item Évaluation des performances de reconstruction/identification de chaque type de particules
+        $\rightarrow$ Particule seule + séparation
+        \pause
+        \item Amélioration des corrections en énergie \\
+        $\rightarrow$ Modification des correction et ajout de nouvelles (région 2)
+        \pause
+        \item Optimisation des paramètres de l'algorithme \\
+        $\rightarrow$ Procédure d'optimisation ??
+        \pause
+        \item Reconstruction des muons en amont
+        \pause
+        \item Évaluation des erreurs systématiques pour la JER (+ autres)
+        \pause
+        \item Rédaction d'une documentation développeur/utilisateur
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{\subsecname}
     \begin{block}{DQM4HEP}
       \begin{itemize}
+        \pause
         \item Remplacement de ROOT pour les histogrammes \\
         $\rightarrow$ Amélioration des performances mémoires \\
         $\rightarrow$ Interface graphique Qt pure, plus adaptée au contexte \\
         $\rightarrow$ Implémentation d'une conversion DQM4HEP $\leftrightarrow$ ROOT
+        \pause
         \item \textit{Refactoring} de la couche réseau \\
         $\rightarrow$ Meilleure maintenance sur le long terme
+        \pause
         \item Extension de la configuration du logiciel \\
         $\rightarrow$ Solution plus centralisée (DB) et plus "\textit{user friendly}" (XML, json, yaml, ...)
+        \pause
         \item Interface web de visualisation \\
         $\rightarrow$ Pas d'installation du logiciel pour les opérateurs
+        \pause
         \item Application de suivi de déploiement du logiciel \\
         $\rightarrow$ Surveillance des performances de chacune des applications en direct
-        \item Implémentation d'un \textit{event display} en ligne
+        \pause
         \item Rédaction d'une documentation développeur/utilisateur/opérateur
       \end{itemize}
     \end{block}
@@ -1298,11 +1598,24 @@
   %% La partie logicielle
   \begin{frame}
   \frametitle{\secname}
-  \framesubtitle{\subsecname - La partie logicielle}
+  \framesubtitle{ArborPFA - La partie logicielle}
     \begin{center}
       \includegraphics[width=\linewidth]{ArborSoftwareView.pdf}
     \end{center}
   \end{frame}
+
+  \begin{frame}
+  \frametitle{\secname}
+  \framesubtitle{ArborPFA ILD - Les performances physiques}
+    \begin{center}
+      \includegraphics[width=0.52\linewidth]{ILDArborPFA_ERec_NoNeutralHadron.pdf}
+      \includegraphics[width=0.52\linewidth]{ILDArborPFA_PerfectERec_NoNeutralHadron.pdf}
+    \end{center}
+  \end{frame}
+
+
+
+
 
   \begin{frame}
   \frametitle{\secname}
